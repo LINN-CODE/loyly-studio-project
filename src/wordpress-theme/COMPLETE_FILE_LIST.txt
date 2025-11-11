@@ -1,0 +1,67 @@
+COMPLETE WORDPRESS THEME FILE STRUCTURE
+=======================================
+
+Files Already Converted (✓):
+-----------------------------
+✓ /wordpress-theme/App.js
+✓ /wordpress-theme/components/Header.js
+✓ /wordpress-theme/components/Hero.js
+✓ /wordpress-theme/components/Benefits.js
+✓ /wordpress-theme/components/WhatWeAreAbout.js
+✓ /wordpress-theme/components/Footer.js
+✓ /wordpress-theme/style.css
+✓ /wordpress-theme/functions.php
+✓ /wordpress-theme/index.php
+✓ /wordpress-theme/header.php
+✓ /wordpress-theme/footer.php
+✓ /wordpress-theme/inc/template-tags.php
+✓ /wordpress-theme/inc/customizer.php
+
+Files Still Need to Convert:
+----------------------------
+PRIORITY 1 - Critical Components (Convert These First):
+□ Contact.tsx → /wordpress-theme/components/Contact.js
+□ Services.tsx → /wordpress-theme/components/Services.js
+□ Pricing.tsx → /wordpress-theme/components/Pricing.js
+□ Rituals.tsx → /wordpress-theme/components/Rituals.js
+□ SaunaExperience.tsx → /wordpress-theme/components/SaunaExperience.js
+
+PRIORITY 2 - Page Components:
+□ About.tsx → /wordpress-theme/components/About.js
+□ Blog.tsx → /wordpress-theme/components/Blog.js
+□ Gallery.tsx → /wordpress-theme/components/Gallery.js
+□ ContactPage.tsx → /wordpress-theme/components/ContactPage.js
+□ MemberPage.tsx → /wordpress-theme/components/MemberPage.js
+□ FloatingSocial.tsx → /wordpress-theme/components/FloatingSocial.js
+□ FinnishLegacy.tsx → /wordpress-theme/components/FinnishLegacy.js
+
+PRIORITY 3 - UI Components (ShadCN):
+□ All files in /components/ui/*.tsx → /wordpress-theme/components/ui/*.js
+  (40+ files - these are library components, less critical to convert immediately)
+
+PRIORITY 4 - Figma Components:
+□ ImageWithFallback.tsx → /wordpress-theme/components/figma/ImageWithFallback.js
+
+Files to Copy (No Conversion Needed):
+--------------------------------------
+□ /styles/globals.css → /wordpress-theme/styles/globals.css
+
+Images/Assets:
+--------------
+Your custom hero images and logo are imported via "figma:asset" paths.
+These will automatically work in WordPress if you're uploading the full theme.
+
+TOTAL CONVERSION PROGRESS:
+==========================
+Converted: 6 main components + 7 WordPress files = 13 files ✓
+Remaining: ~15 main components + 40 UI components = ~55 files
+
+RECOMMENDATION:
+===============
+Given the number of files, I suggest:
+
+OPTION A (Fastest): Use the automated bash script in CONVERSION_SCRIPT.md
+OPTION B (Safest): I can convert all remaining files for you one-by-one
+OPTION C (Hybrid): Convert Priority 1 files manually, use script for rest
+
+Which would you prefer?
