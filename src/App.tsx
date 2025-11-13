@@ -29,7 +29,7 @@ export default function App() {
 
   const pageTransition = {
     duration: 0.5,
-    ease: [0.4, 0, 0.2, 1]
+    ease: "easeInOut"
   };
 
   return (
@@ -37,91 +37,97 @@ export default function App() {
       <Header currentPage={currentPage} onNavigate={setCurrentPage} />
       <FloatingSocial />
       <AnimatePresence mode="wait">
-        {currentPage === "home" ? (
-          <motion.div
-            key="home"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <Hero />
-            <WhatWeAreAbout onNavigate={setCurrentPage} />
-            <Benefits />
-            <SaunaExperience />
-            <Rituals />
-            <Services />
-            <Pricing />
-            <Contact />
-          </motion.div>
-        ) : currentPage === "about" ? (
-          <motion.div
-            key="about"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <About />
-          </motion.div>
-        ) : currentPage === "member" ? (
-          <motion.div
-            key="member"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <MemberPage />
-          </motion.div>
-        ) : currentPage === "blog" ? (
-          <motion.div
-            key="blog"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <Blog />
-          </motion.div>
-        ) : currentPage === "gallery" ? (
-          <motion.div
-            key="gallery"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <Gallery />
-          </motion.div>
-        ) : currentPage === "supplier" ? (
-          <motion.div
-            key="supplier"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <SupplierPage />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="contact"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <ContactPage />
-          </motion.div>
-        )}
+      {currentPage === "home" && (
+        <motion.div
+        key="home"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <Hero />
+        <WhatWeAreAbout onNavigate={setCurrentPage} />
+        <Benefits />
+        <SaunaExperience />
+        <Rituals />
+        <Services />
+        <Pricing />
+        <Contact />
+        </motion.div>
+      )}
+      {currentPage === "about" && (
+        <motion.div
+        key="about"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <About />
+        </motion.div>
+      )}
+      {currentPage === "member" && (
+        <motion.div
+        key="member"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <MemberPage />
+        </motion.div>
+      )}
+      {currentPage === "blog" && (
+        <motion.div
+        key="blog"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <Blog />
+        </motion.div>
+      )}
+      {currentPage === "gallery" && (
+        <motion.div
+        key="gallery"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <Gallery />
+        </motion.div>
+      )}
+      {currentPage === "contact" && (
+        <motion.div
+        key="contact"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <ContactPage />
+        </motion.div>
+      )}
+      {currentPage === "supplier" && (
+        <motion.div
+        key="supplier"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        transition={pageTransition}
+        >
+        <SupplierPage />
+        </motion.div>
+      )}
       </AnimatePresence>
       <Footer onNavigate={setCurrentPage} />
     </div>
