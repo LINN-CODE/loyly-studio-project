@@ -25,7 +25,7 @@ export function WhatWeAreAbout({ onNavigate }: WhatWeAreAboutProps) {
           <h2 className="mb-8 text-[#004d40] text-[48px] font-bold">What We Are About</h2>
           <div className="space-y-6 text-[#2b2b2b]/80 leading-relaxed">
             <p className="text-[24px]">
-              Löyly Studio is a sanctuary that share the calm, to reset body and mind, to breathe deeply, and reconnect with community.
+              Löyly Studio is a sanctuary that shares calm - a space to reset the body and mind, breathe deeply, and reconnect with the community
             </p>
           </div>
           

@@ -32,7 +32,6 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
     >
-        <link rel="icon" type="image/png" href="/logo.png" />
       <div className="container mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}

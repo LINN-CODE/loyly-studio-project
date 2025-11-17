@@ -1,43 +1,46 @@
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback.js";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card.js";
+import { SaunaExperience } from "./SaunaExperience.js";
+
+// For WordPress, you'll need to update this path to point to your uploaded media
+const merchLogo = "<?php echo get_template_directory_uri(); ?>/assets/images/loyly-logo.png";
 
 const merchItems = [
   {
     name: "Löyly Studio Towel",
     description: "Premium cotton sauna towel",
     price: "Coming Soon",
-    image: "https://images.unsplash.com/photo-1496890185067-72d7d9af66b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHRvd2VsJTIwbWluaW1hbHxlbnwxfHx8fDE3NjIzMjcyMjl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: merchLogo
   },
   {
     name: "Insulated Water Bottle",
     description: "Stay hydrated in style",
     price: "Coming Soon",
-    image: "https://images.unsplash.com/photo-1712065612475-4a48f6b8e50b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlciUyMGJvdHRsZSUyMG1pbmltYWx8ZW58MXx8fHwxNzYyMjU5NTA2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: merchLogo
   },
   {
     name: "Sauna Robe",
     description: "Luxurious spa-quality robe",
     price: "Coming Soon",
-    image: "https://images.unsplash.com/photo-1650686037150-4fa6125bec46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHJvYmUlMjBzcGF8ZW58MXx8fHwxNjIzMjcyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: merchLogo
   },
   {
     name: "Wooden Accessories Set",
     description: "Traditional sauna bucket & ladle",
     price: "Coming Soon",
-    image: "https://images.unsplash.com/photo-1698577290738-b29fe983739d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMGFjY2Vzc29yaWVzJTIwd29vZGVufGVufDF8fHx8MTc2MjMyNzIzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: merchLogo
   },
   {
     name: "Löyly Studio Tote Bag",
     description: "Carry your essentials",
     price: "Coming Soon",
-    image: "https://images.unsplash.com/photo-1711880993227-4a1e690f21cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0b3RlJTIwYmFnJTIwbWluaW1hbHxlbnwxfHx8fDE3NjIyNDc3NjV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: merchLogo
   },
   {
     name: "Eucalyptus Essential Oil",
     description: "Authentic sauna aromatherapy",
     price: "Coming Soon",
-    image: "https://images.unsplash.com/photo-1608571424634-58ae03e6edcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3NlbnRpYWwlMjBvaWxzJTIwYm90dGxlfGVufDF8fHx8MTc2MjMyNzIzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: merchLogo
   },
 ];
 
@@ -57,6 +60,9 @@ export function MemberPage() {
             Join the löyly studio community and immerse yourself in authentic Finnish sauna culture
           </p>
         </motion.div>
+
+        {/* How to Experience Section */}
+        <SaunaExperience />
 
         {/* Session Pricing and Packages */}
         <motion.section
@@ -86,14 +92,9 @@ export function MemberPage() {
                   We're crafting the perfect membership experience for our community. 
                   Sign up below to be notified when pricing is announced.
                 </p>
-                <motion.a
-                  href="#contact"
-                  className="inline-block px-8 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Priority Queue
-                </motion.a>
+                <p className="text-[#004d40]">
+                  Coming Soon
+                </p>
               </div>
             </motion.div>
           </div>
@@ -121,11 +122,11 @@ export function MemberPage() {
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
               >
                 <Card className="overflow-hidden border-gray-200 hover:border-gray-400 transition-all group">
-                  <div className="aspect-square overflow-hidden bg-gray-100">
-                    <ImageWithFallback
+                  <div className="aspect-square overflow-hidden bg-white flex items-center justify-center p-8">
+                    <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <CardHeader className="pb-3">

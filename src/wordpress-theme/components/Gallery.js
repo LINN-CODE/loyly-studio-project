@@ -166,39 +166,6 @@ export function Gallery() {
               @loylystudio.sg
             </a>
           </div>
-
-          {/* Instagram Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {instagramPosts.map((post, index) => (
-              <motion.div
-                key={index}
-                className="relative group cursor-pointer aspect-square overflow-hidden border border-gray-200"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <img
-                  src={post.image}
-                  alt={post.caption}
-                  className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <div className="text-white flex gap-6">
-                    <div className="flex items-center gap-2">
-                      <Heart className="w-5 h-5" />
-                      <span>{post.likes}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MessageCircle className="w-5 h-5" />
-                      <span>{post.comments}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
 

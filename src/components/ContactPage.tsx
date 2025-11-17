@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Clock, Instagram, MessageCircle, Facebook } from "lucide-react";
+import { MapPin, Mail, Clock, Instagram, MessageCircle, Facebook } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function ContactPage() {
@@ -58,11 +58,11 @@ export function ContactPage() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 bg-gray-50">
-                  <Phone className="w-6 h-6 text-gray-800" />
+                  <MessageCircle className="w-6 h-6 text-gray-800" />
                 </div>
                 <div>
-                  <h3 className="text-gray-900 mb-2">Phone</h3>
-                  <a href="tel:+6590080133" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  <h3 className="text-gray-900 mb-2">WhatsApp</h3>
+                  <a href="https://wa.me/6590080133" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
                     +65 9008 0133
                   </a>
                 </div>
@@ -121,7 +121,7 @@ export function ContactPage() {
                   <Instagram className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="https://facebook.com/loylystudio"
+                  href="https://www.facebook.com/profile.php?id=61581544193788"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center border border-gray-300 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all"
@@ -131,7 +131,7 @@ export function ContactPage() {
                   <Facebook className="w-5 h-5" />
                 </motion.a>
                 <motion.a
-                  href="https://tiktok.com/@loylystudio"
+                  href="https://www.tiktok.com/@loylystudio.sg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center border border-gray-300 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all"

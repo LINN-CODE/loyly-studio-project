@@ -5,7 +5,6 @@ import { Header } from "./components/Header.js";
 import { Hero } from "./components/Hero.js";
 import { WhatWeAreAbout } from "./components/WhatWeAreAbout.js";
 import { Benefits } from "./components/Benefits.js";
-import { SaunaExperience } from "./components/SaunaExperience.js";
 import { Rituals } from "./components/Rituals.js";
 import { Services } from "./components/Services.js";
 import { Pricing } from "./components/Pricing.js";
@@ -49,7 +48,6 @@ function App() {
             <Hero />
             <WhatWeAreAbout />
             <Benefits />
-            <SaunaExperience />
             <Rituals />
             <Services />
             <Pricing />

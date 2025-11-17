@@ -4,43 +4,47 @@ import { Facebook, Instagram } from "lucide-react";
 export function FloatingSocial() {
   return (
     <motion.div 
-      className="fixed left-1/2 -translate-x-1/2 bottom-8 md:left-auto md:right-8 md:translate-x-0 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-40 flex flex-row md:flex-col gap-4"
+      className="fixed left-1/2 -translate-x-1/2 bottom-8 md:left-auto md:right-8 md:translate-x-0 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-40 flex flex-row md:flex-col gap-3 md:gap-4"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
     >
       <motion.a 
-        href="#" 
-        className="w-12 h-12 bg-white border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-50 transition-colors shadow-sm"
+        href="https://www.facebook.com/profile.php?id=61581544193788" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-50 transition-colors shadow-sm"
         aria-label="Facebook"
         whileHover={{ scale: 1.15, x: -5 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
       >
-        <Facebook className="w-5 h-5 text-gray-600" />
+        <Facebook className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
       </motion.a>
       <motion.a 
         href="https://www.instagram.com/loylystudio.sg/" 
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 bg-white border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-50 transition-colors shadow-sm"
+        className="w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-50 transition-colors shadow-sm"
         aria-label="Instagram"
         whileHover={{ scale: 1.15, x: -5 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
       >
-        <Instagram className="w-5 h-5 text-gray-600" />
+        <Instagram className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
       </motion.a>
       <motion.a 
-        href="#" 
-        className="w-12 h-12 bg-white border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-50 transition-colors shadow-sm"
+        href="https://www.tiktok.com/@loylystudio.sg" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-50 transition-colors shadow-sm"
         aria-label="TikTok"
         whileHover={{ scale: 1.15, x: -5 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
       >
         <svg 
-          className="w-5 h-5 text-gray-600" 
+          className="w-4 h-4 md:w-5 md:h-5 text-gray-600" 
           fill="currentColor" 
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"

@@ -2,12 +2,15 @@ import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback.js";
+import infraredCabinImage from "figma:asset/5b12655f4deece27186db25dcf340aa00541630e.png";
+import traditionalSaunaImage from "figma:asset/04c13085a52f2bbbdc1159fca428d91fe9b0ba25.png";
+import coldPlungeImage from "figma:asset/d6b9c97bc35799a6251c348243d9eb5e3ac183ee.png";
 
 const services = [
   {
     title: "Traditional Finnish Sauna",
     description: "Experience authentic dry heat therapy in our classic wooden sauna, heated to 80-100°C for the ultimate purifying experience.",
-    image: "https://images.unsplash.com/photo-1757940661240-f2e8d2ff93bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBzYXVuYXxlbnwxfHx8fDE3NjIyNTQzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    image: traditionalSaunaImage
   },
   {
     title: "Steam Room",
@@ -17,12 +20,12 @@ const services = [
   {
     title: "Infrared Cabin",
     description: "Modern infrared technology penetrates deeper into muscles for enhanced recovery and relaxation at lower temperatures.",
-    image: "https://images.unsplash.com/photo-1554424518-336ec861b705?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjB3ZWxsbmVzcyUyMHJlbGF4YXRpb258ZW58MXx8fHwxNzYyMjM3NjA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    image: infraredCabinImage
   },
   {
     title: "Cold Plunge",
     description: "Complete your wellness ritual with our invigorating cold plunge, reducing inflammation and boosting recovery after heat therapy.",
-    image: "https://images.unsplash.com/photo-1497638538792-bc3c26959486?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xkJTIwcGx1bmdlJTIwcG9vbHxlbnwxfHx8fDE3NjIzMjAzMDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    image: coldPlungeImage
   }
 ];
 

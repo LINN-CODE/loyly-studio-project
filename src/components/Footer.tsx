@@ -82,13 +82,9 @@ export function Footer({ onNavigate }: FooterProps) {
             viewport={{ once: true }}
           >
             <h4 className="mb-6 text-[#004d40]">Home Sauna Solutions</h4>
-            <p className="text-[#2b2b2b]/70 leading-relaxed mb-4">
+            <p className="text-[#2b2b2b]/70 leading-relaxed mb-6">
               Dreaming of your own sauna? Let's bring it to life.
             </p>
-            <ul className="space-y-3 text-[#2b2b2b]/70 mb-6">
-              <li>One pax Finnish sauna</li>
-              <li>Custom designed and build</li>
-            </ul>
             <Button 
               variant="outline" 
               className="border-2 border-[#004d40] text-[#004d40] hover:bg-[#004d40] hover:text-white transition-colors"
@@ -110,7 +106,9 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="mb-6 text-[#004d40]">Follow Us</h4>
             <div className="flex gap-4">
               <motion.a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61581544193788" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border-2 border-[#004d40] rounded-lg flex items-center justify-center hover:bg-[#004d40] transition-colors group"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
@@ -118,7 +116,9 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Facebook className="w-5 h-5 text-[#004d40] group-hover:text-white" />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.instagram.com/loylystudio.sg/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border-2 border-[#004d40] rounded-lg flex items-center justify-center hover:bg-[#004d40] transition-colors group"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
@@ -126,7 +126,9 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Instagram className="w-5 h-5 text-[#004d40] group-hover:text-white" />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.tiktok.com/@loylystudio.sg" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border-2 border-[#004d40] rounded-lg flex items-center justify-center hover:bg-[#004d40] transition-colors group"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}

@@ -77,13 +77,9 @@ export function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="mb-6 text-gray-900">Home Sauna Solutions</h4>
-            <p className="text-gray-500 leading-relaxed mb-4">
+            <p className="text-gray-500 leading-relaxed mb-6">
               Dreaming of your own sauna? Let's bring it to life.
             </p>
-            <ul className="space-y-3 text-gray-500 mb-6">
-              <li>One pax Finnish sauna</li>
-              <li>Custom designed and build</li>
-            </ul>
             <Button 
               variant="outline" 
               className="border-gray-300 hover:border-gray-900 transition-colors"
@@ -108,7 +104,9 @@ export function Footer() {
             <h4 className="mb-6 text-gray-900">Follow Us</h4>
             <div className="flex gap-4">
               <motion.a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61581544193788" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border border-gray-300 flex items-center justify-center hover:border-gray-900 transition-colors"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
@@ -116,7 +114,9 @@ export function Footer() {
                 <Facebook className="w-5 h-5 text-gray-600" />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.instagram.com/loylystudio.sg/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border border-gray-300 flex items-center justify-center hover:border-gray-900 transition-colors"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
@@ -124,7 +124,9 @@ export function Footer() {
                 <Instagram className="w-5 h-5 text-gray-600" />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.tiktok.com/@loylystudio.sg" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border border-gray-300 flex items-center justify-center hover:border-gray-900 transition-colors"
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}

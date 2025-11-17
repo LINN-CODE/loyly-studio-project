@@ -19,20 +19,7 @@ export function WhatWeAreAbout() {
           <h2 className="mb-8 text-gray-900 text-[48px] font-bold">What We Are About</h2>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <p className="text-[24px]">
-              At löyly studio, we believe in the transformative power of authentic Finnish sauna. 
-              Our mission is to bring sauna bathing to modern life, creating a 
-              sanctuary where wellness, community, and mindfulness converge.
-            </p>
-            <p className="text-[24px]">
-              We're dedicated to providing an authentic Finnish sauna experience that honors centuries-old 
-              traditions while embracing contemporary wellness practices. From the carefully selected wood 
-              to the gentle heat and the ritual of löyly—the steam created by water on hot stones—every 
-              detail is thoughtfully curated.
-            </p>
-            <p className="text-[24px]">
-              Whether you're seeking physical rejuvenation, mental clarity, or meaningful connection, 
-              löyly studio offers a welcoming space to slow down, breathe deeply, and rediscover balance 
-              in your life.
+              Löyly Studio is a sanctuary that shares calm - a space to reset the body and mind, breathe deeply, and reconnect with the community
             </p>
           </div>
         </motion.div>
