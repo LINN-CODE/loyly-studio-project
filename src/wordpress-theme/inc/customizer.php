@@ -1,0 +1,58 @@
+<?php
+/**
+ * Löyly Studio Theme Customizer
+ *
+ * @package Loyly_Studio
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+/**
+ * Add postMessage support for site title and description for the Theme Customizer
+ */
+function loyly_customize_register($wp_customize) {
+    $wp_customize->get_setting('blogname')->transport         = 'postMessage';
+    $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
+
+    if (isset($wp_customize->selective_refresh)) {
+        $wp_customize->selective_refresh->add_partial('blogname', array(
+            'selector'        => '.site-title a',
+            'render_callback' => 'loyly_customize_partial_blogname',
+        ));
+        $wp_customize->selective_refresh->add_partial('blogdescription', array(
+            'selector'        => '.site-description',
+            'render_callback' => 'loyly_customize_partial_blogdescription',
+        ));
+    }
+}
+add_action('customize_register', 'loyly_customize_register');
+
+/**
+ * Render the site title for the selective refresh partial
+ */
+function loyly_customize_partial_blogname() {
+    bloginfo('name');
+}
+
+/**
+ * Render the site tagline for the selective refresh partial
+ */
+function loyly_customize_partial_blogdescription() {
+    bloginfo('description');
+}
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously
+ */
+function loyly_customize_preview_js() {
+    wp_enqueue_script(
+        'loyly-customizer',
+        get_template_directory_uri() . '/js/customizer.js',
+        array('customize-preview'),
+        '1.0.0',
+        true
+    );
+}
+add_action('customize_preview_init', 'loyly_customize_preview_js');
