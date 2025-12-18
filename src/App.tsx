@@ -1,5 +1,8 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import { ScrollToTop } from "./components/ScrollToTop";
+
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { WhatWeAreAbout } from "./components/WhatWeAreAbout";
@@ -18,15 +21,7 @@ import { SupplierPage } from "./components/SupplierPage";
 import { FloatingSocial } from "./components/FloatingSocial";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<
-    | "home"
-    | "about"
-    | "member"
-    | "blog"
-    | "gallery"
-    | "contact"
-    | "supplier"
-  >("home");
+  const location = useLocation();
 
   const pageVariants = {
     initial: { opacity: 0, y: 20 },
@@ -41,98 +36,103 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header
-        currentPage={currentPage}
-        onNavigate={setCurrentPage}
-      />
+      {/* 🔑 THIS IS THE FIX */}
+      <ScrollToTop />
+
+      <Header />
       <FloatingSocial />
+
       <AnimatePresence mode="wait">
-        {currentPage === "home" ? (
-          <motion.div
-            key="home"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <Hero />
-            <WhatWeAreAbout onNavigate={setCurrentPage} />
-            <Benefits />
-            <Rituals />
-            <Services />
-            <Pricing />
-            <Contact />
-          </motion.div>
-        ) : currentPage === "about" ? (
-          <motion.div
-            key="about"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <About />
-          </motion.div>
-        ) : currentPage === "member" ? (
-          <motion.div
-            key="member"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <MemberPage />
-          </motion.div>
-        ) : currentPage === "blog" ? (
-          <motion.div
-            key="blog"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <Blog />
-          </motion.div>
-        ) : currentPage === "gallery" ? (
-          <motion.div
-            key="gallery"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <Gallery />
-          </motion.div>
-        ) : currentPage === "supplier" ? (
-          <motion.div
-            key="supplier"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <SupplierPage />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="contact"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={pageVariants}
-            transition={pageTransition}
-          >
-            <ContactPage />
-          </motion.div>
-        )}
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={pageTransition}
+              >
+                <Hero />
+                <WhatWeAreAbout />
+                <Benefits />
+                <Rituals />
+                <Services />
+                <Pricing />
+                <Contact />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/about"
+            element={
+              <motion.div {...motionProps(pageVariants, pageTransition)}>
+                <About />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/member"
+            element={
+              <motion.div {...motionProps(pageVariants, pageTransition)}>
+                <MemberPage />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/blog"
+            element={
+              <motion.div {...motionProps(pageVariants, pageTransition)}>
+                <Blog />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/gallery"
+            element={
+              <motion.div {...motionProps(pageVariants, pageTransition)}>
+                <Gallery />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/supplier"
+            element={
+              <motion.div {...motionProps(pageVariants, pageTransition)}>
+                <SupplierPage />
+              </motion.div>
+            }
+          />
+
+          <Route
+            path="/contact"
+            element={
+              <motion.div {...motionProps(pageVariants, pageTransition)}>
+                <ContactPage />
+              </motion.div>
+            }
+          />
+        </Routes>
       </AnimatePresence>
-      <Footer onNavigate={setCurrentPage} />
+
+      <Footer />
     </div>
   );
+}
+
+
+function motionProps(variants: any, transition: any) {
+  return {
+    variants,
+    initial: "initial",
+    animate: "animate",
+    exit: "exit",
+    transition,
+  };
 }

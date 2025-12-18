@@ -85,6 +85,7 @@ function loyly_studio_scripts() {
                 "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
                 "motion/react": "https://esm.sh/motion@11.11.17/react",
                 "lucide-react": "https://esm.sh/lucide-react@0.454.0",
+                "wouter": "https://esm.sh/wouter@3.3.5",
                 "react-slick": "https://esm.sh/react-slick@0.30.2",
                 "slick-carousel/slick/slick.css": "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css",
                 "slick-carousel/slick/slick-theme.css": "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
