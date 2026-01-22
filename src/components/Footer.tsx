@@ -100,7 +100,7 @@ export function Footer() {
             <Button
               variant="outline"
               className="border-2 border-[#004d40] text-[#004d40] hover:bg-[#004d40] hover:text-white transition-colors"
-              onClick={() => go("/supplier")}
+              onClick={() => go("/about")}
             >
               Learn More
             </Button>
