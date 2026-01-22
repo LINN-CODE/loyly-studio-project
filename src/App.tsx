@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { ScrollToTop } from "./components/ScrollToTop";
 
+import { PriorityListBanner } from "./components/PriorityListBanner";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { WhatWeAreAbout } from "./components/WhatWeAreAbout";
@@ -41,7 +42,7 @@ export default function App() {
 
       <Header />
       <FloatingSocial />
-
+      <PriorityListBanner />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route
