@@ -5,16 +5,15 @@ interface BlogProps {
   onNavigate?: (page: string) => void;
 }
 
-export default function Blog({ onNavigate }: BlogProps) {
-  const blogFeaturedImg = "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80";
-
+export function Blog({ onNavigate }: BlogProps) {
   return (
     <div className="min-h-screen bg-white pt-32 pb-24">
       <div className="container mx-auto px-8">
         <div className="text-center mb-20">
           <h1 className="mb-4 text-gray-900 text-[40px] font-bold">Blog</h1>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            Insights on sauna culture, wellness science, and the art of heat therapy
+            Insights on sauna culture, wellness science, and the art of heat
+            therapy
           </p>
         </div>
 
@@ -30,12 +29,13 @@ export default function Blog({ onNavigate }: BlogProps) {
             transition={{ duration: 0.6 }}
             onClick={() => onNavigate?.("blog-post")}
           >
-            {/* Image - Now Smaller */}
+            {/* ✅ Image (small on all screens) */}
             <div
               className="
                 flex-shrink-0 overflow-hidden
-                w-[200px] h-[200px]
-                max-md:w-full max-md:h-[180px]
+                w-[220px] h-[140px]
+                max-md:w-[200px] max-md:h-[130px]
+                max-md:mx-auto
               "
             >
               <img
@@ -55,9 +55,10 @@ export default function Blog({ onNavigate }: BlogProps) {
               </div>
 
               <p className="text-gray-700 mb-6 leading-relaxed">
-                There's something strange about standing in an empty space that's about to become something.
-                December was that month for us. No sauna yet. No steam, no wood, no benches where people would
-                eventually sit and sweat and breathe...
+                There's something strange about standing in an empty space
+                that's about to become something. December was that month for
+                us. No sauna yet. No steam, no wood, no benches where people
+                would eventually sit and sweat and breathe...
               </p>
 
               <motion.div
