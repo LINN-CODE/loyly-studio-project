@@ -1,34 +1,35 @@
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-interface WhatWeAreAboutProps {
-  onNavigate?: (page: "about") => void;
-}
-
-export function WhatWeAreAbout({ onNavigate }: WhatWeAreAboutProps) {
+export function WhatWeAreAbout() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const navigate = useNavigate();
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-[#f5f9f8] border-t-2 border-b-2 border-[#004d40]/20">
       <div className="container mx-auto px-8">
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
           ref={ref}
         >
-          <h2 className="mb-8 text-[#004d40] text-[48px] font-bold">What We Are About</h2>
+          <h2 className="mb-8 text-[#004d40] text-[48px] font-bold">
+            What We Are About
+          </h2>
+
           <div className="space-y-6 text-[#2b2b2b]/80 leading-relaxed">
             <p className="text-[24px]">
-              Löyly Studio is a sanctuary that shares calm - a space to reset the body and mind, breathe deeply, and reconnect with the community
+              Löyly Studio is a sanctuary that shares calm - a space to reset the
+              body and mind, breathe deeply, and reconnect with the community
             </p>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -36,7 +37,7 @@ export function WhatWeAreAbout({ onNavigate }: WhatWeAreAboutProps) {
             className="mt-8"
           >
             <Button
-              onClick={() => onNavigate?.("about")}
+              onClick={() => navigate("/about")}
               className="bg-[#004d40] hover:bg-[#003d33] text-white px-8 py-6 group"
             >
               Learn More About Us
