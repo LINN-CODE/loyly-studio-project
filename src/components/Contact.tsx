@@ -83,10 +83,18 @@ export function Contact() {
             whileHover={{ scale: 1.02 }}
           >
             <h3 className="mb-6 text-[#2b2b2b] text-center font-bold text-[36px]">Join Our löyly Community</h3>
-            <p className="text-[#2b2b2b]/70 mb-10 text-center max-w-md">To receive more informations and updates and the opportunity to be invited to our prelaunch events</p>
-            <p className="text-[#004d40]">
-              Coming Soon
-            </p>
+            <p className="text-[#2b2b2b]/70 mb-8 text-center max-w-md">To receive more informations and updates and the opportunity to be invited to our prelaunch events</p>
+            
+            <motion.a
+              href="https://loylystudio.rezerv.co/prioritylist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 border-2 border-[#004d40] text-[#004d40] hover:bg-[#004d40] hover:text-white transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Join Now
+            </motion.a>
           </motion.div>
         </div>
       </div>

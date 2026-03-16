@@ -22,20 +22,22 @@ export function PriorityListBanner() {
       >
         <motion.div
           className="bg-gradient-to-br from-[#004d40] to-[#00695c] text-white rounded-lg shadow-lg border border-[#004d40]/20"
-          animate={{
-            width: isHovered ? "280px" : "200px",
-            x: isHovered ? 5 : 0,
+          animate={{ 
+            width: isHovered ? "320px" : "240px",
+            x: isHovered ? 5 : 0 
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           {/* Compact View */}
-          <div className="px-4 py-3">
-            <div className="flex items-center gap-2 mb-1.5">
-              <Bell className="w-4 h-4 flex-shrink-0" />
-              <h3 className="text-white text-[11px] font-medium">Priority List</h3>
+          <div className="px-6 py-4">
+            <div className="flex items-center gap-3 mb-2">
+              <Bell className="w-5 h-5 flex-shrink-0" />
+              <h3 className="text-white text-sm">
+                Priority List
+              </h3>
             </div>
-            <p className="text-white/90 text-[10px] leading-snug">
-              Join for exclusive early access
+            <p className="text-white/90 text-xs leading-relaxed">
+              Join our Priority List for exclusive early access
             </p>
           </div>
 
@@ -49,38 +51,34 @@ export function PriorityListBanner() {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden border-t border-white/20"
               >
-                <div className="px-4 py-3 space-y-2.5">
-                  <p className="text-white/90 text-[10px] mb-2 font-medium">
+                <div className="px-6 py-4 space-y-3">
+                  <p className="text-white/90 text-xs mb-3">
                     Members receive:
                   </p>
-
+                  
                   <div className="flex items-start gap-2">
-                    <Gift className="w-3.5 h-3.5 flex-shrink-0 text-white/90 mt-0.5" />
-                    <p className="text-white/80 text-[10px] leading-snug">
-                      Invitation to Complimentary pre-launch sessions (by
-                      invitation, limited slots)
+                    <Gift className="w-4 h-4 flex-shrink-0 text-white/90 mt-0.5" />
+                    <p className="text-white/80 text-xs leading-relaxed">
+                      Invitation to Complimentary pre-launch sessions (by invitation, limited slots)
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <CalendarClock className="w-4 h-4 flex-shrink-0 text-white/90 mt-0.5" />
+                    <p className="text-white/80 text-xs leading-relaxed">
+                      Exclusive Soft Launch pricing packages reserved for Priority List members (available only during our Soft Launch period and in limited quantities)
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <DollarSign className="w-4 h-4 flex-shrink-0 text-white/90 mt-0.5" />
+                    <p className="text-white/80 text-xs leading-relaxed">
+                      Chance to win a 5-Day Pass (details will be released to Priority List only)
                     </p>
                   </div>
 
-                  <div className="flex items-start gap-2">
-                    <CalendarClock className="w-3.5 h-3.5 flex-shrink-0 text-white/90 mt-0.5" />
-                    <p className="text-white/80 text-[10px] leading-snug">
-                      Exclusive Soft Launch pricing packages reserved for
-                      Priority List members (available only during our Soft
-                      Launch period and in limited quantities)
-                    </p>
-                  </div>
-
-                  <div className="flex items-start gap-2">
-                    <DollarSign className="w-3.5 h-3.5 flex-shrink-0 text-white/90 mt-0.5" />
-                    <p className="text-white/80 text-[10px] leading-snug">
-                      Chance to win a 5-Day Pass (details will be released to
-                      Priority List only)
-                    </p>
-                  </div>
-
-                  <div className="pt-1.5 mt-1.5 border-t border-white/20">
-                    <p className="text-white text-[10px] text-center">
+                  <div className="pt-2 mt-2 border-t border-white/20">
+                    <p className="text-white text-xs text-center">
                       Click to sign up →
                     </p>
                   </div>
