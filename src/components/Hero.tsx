@@ -39,8 +39,8 @@ export function Hero() {
   }, [api]);
 
   return (
-    <section id="home" className="bg-white pt-24">
-      <div className="container mx-auto px-8 py-8">
+    <section id="home" className="bg-white pt-24 pb-8">
+      <div className="container mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -91,7 +91,7 @@ export function Hero() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.8, delay: 0.6 }}
                         >
-                          Löyly (pronounced "loy-loo") is the steam created when water is poured over hot stones.
+                          Löyly (pronounced "lou-loo") is the steam created when water is poured over hot stones.
                           Finns call it the "spirit" of the sauna—gentle, enveloping heat that invites you to slow down.
                         </motion.p>
                       </div>

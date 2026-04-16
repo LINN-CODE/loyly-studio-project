@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { MapPin, MessageCircle, Mail } from "lucide-react";
+import { MapPin, MessageCircle, Mail, Phone } from "lucide-react";
 
 export function Contact() {
   const ref = useRef(null);
@@ -41,7 +41,21 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-[#2b2b2b] mb-1">Address</div>
-                  <p className="text-[#2b2b2b]/70">Siglap Area</p>
+                  <p className="text-[#2b2b2b]/70">34 Siglap Drive, 456159</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="flex items-start gap-4"
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-[#004d40] stroke-1" />
+                </div>
+                <div>
+                  <div className="text-[#2b2b2b] mb-1">Phone</div>
+                  <a href="tel:+6560411306" className="text-[#2b2b2b]/70 hover:text-[#004d40] transition-colors">6041 1306</a>
                 </div>
               </motion.div>
 
@@ -54,7 +68,7 @@ export function Contact() {
                   <MessageCircle className="w-6 h-6 text-[#004d40] stroke-1" />
                 </div>
                 <div>
-                  <div className="text-[#2b2b2b] mb-1">WhatsApp</div>
+                  <div className="text-[#2b2b2b] mb-1">WhatsApp Only</div>
                   <a href="https://wa.me/6590080133" target="_blank" rel="noopener noreferrer" className="text-[#2b2b2b]/70 hover:text-[#004d40] transition-colors">+65 9008 0133</a>
                 </div>
               </motion.div>
@@ -69,7 +83,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-[#2b2b2b] mb-1">Email</div>
-                  <p className="text-[#2b2b2b]/70">info@loylystudio.com</p>
+                  <p className="text-[#2b2b2b]/70">hello@loylystudio.sg</p>
                 </div>
               </motion.div>
             </div>
@@ -83,10 +97,18 @@ export function Contact() {
             whileHover={{ scale: 1.02 }}
           >
             <h3 className="mb-6 text-[#2b2b2b] text-center font-bold text-[36px]">Join Our löyly Community</h3>
-            <p className="text-[#2b2b2b]/70 mb-10 text-center max-w-md">To receive more informations and updates and the opportunity to be invited to our prelaunch events</p>
-            <p className="text-[#004d40]">
-              Coming Soon
-            </p>
+            <p className="text-[#2b2b2b]/70 mb-8 text-center max-w-md">To receive more informations and updates and the opportunity to be invited to our prelaunch events</p>
+            
+            <motion.a
+              href="https://loylystudio.rezerv.co/prioritylist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 border-2 border-[#004d40] text-[#004d40] hover:bg-[#004d40] hover:text-white transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Join Now
+            </motion.a>
           </motion.div>
         </div>
       </div>

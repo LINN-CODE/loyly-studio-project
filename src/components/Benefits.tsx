@@ -67,7 +67,7 @@ export function Benefits() {
             >
               <motion.div 
                 className="w-20 h-20 mb-6 flex items-center justify-center mx-auto bg-[#004d40]/10 rounded-full border-2 border-[#004d40]/20"
-                whileHover={{ scale: 1.1, rotate: 5, borderColor: "rgba(0, 77, 64, 0.4)" }}
+                whileHover={{ scale: 1.1, rotate: 5, borderColor: "#004d4066" }}
                 transition={{ duration: 0.3 }}
               >
                 <benefit.icon className="w-10 h-10 text-[#004d40] stroke-[1.5]" />

@@ -11,11 +11,14 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { About } from "./components/About";
 import { Blog } from "./components/Blog";
+import { BlogPost } from "./components/BlogPost";
+import { RealmBlogPost } from "./components/RealmBlogPost";
 import { Gallery } from "./components/Gallery";
 import { ContactPage } from "./components/ContactPage";
 import { MemberPage } from "./components/MemberPage";
 import { SupplierPage } from "./components/SupplierPage";
 import { FloatingSocial } from "./components/FloatingSocial";
+import { FloatingBookNow } from "./components/FloatingBookNow";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
@@ -23,6 +26,8 @@ export default function App() {
     | "about"
     | "member"
     | "blog"
+    | "blog-post"
+    | "blog-post-realm"
     | "gallery"
     | "contact"
     | "supplier"
@@ -46,6 +51,7 @@ export default function App() {
         onNavigate={setCurrentPage}
       />
       <FloatingSocial />
+      <FloatingBookNow />
       <AnimatePresence mode="wait">
         {currentPage === "home" ? (
           <motion.div
@@ -95,7 +101,29 @@ export default function App() {
             variants={pageVariants}
             transition={pageTransition}
           >
-            <Blog />
+            <Blog onNavigate={setCurrentPage} />
+          </motion.div>
+        ) : currentPage === "blog-post" ? (
+          <motion.div
+            key="blog-post"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageVariants}
+            transition={pageTransition}
+          >
+            <BlogPost onNavigate={setCurrentPage} />
+          </motion.div>
+        ) : currentPage === "blog-post-realm" ? (
+          <motion.div
+            key="blog-post-realm"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageVariants}
+            transition={pageTransition}
+          >
+            <RealmBlogPost onNavigate={setCurrentPage} />
           </motion.div>
         ) : currentPage === "gallery" ? (
           <motion.div
