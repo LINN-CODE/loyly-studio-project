@@ -18,6 +18,7 @@ import { ContactPage } from "./components/ContactPage";
 import { MemberPage } from "./components/MemberPage";
 import { SupplierPage } from "./components/SupplierPage";
 import { FloatingSocial } from "./components/FloatingSocial";
+import { FloatingBookNow } from "./components/FloatingBookNow";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<
@@ -50,6 +51,7 @@ export default function App() {
         onNavigate={setCurrentPage}
       />
       <FloatingSocial />
+      <FloatingBookNow />
       <AnimatePresence mode="wait">
         {currentPage === "home" ? (
           <motion.div
