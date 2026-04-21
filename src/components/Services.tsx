@@ -2,9 +2,10 @@ import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import infraredCabinImage from "figma:asset/5b12655f4deece27186db25dcf340aa00541630e.png";
-import traditionalSaunaImage from "figma:asset/04c13085a52f2bbbdc1159fca428d91fe9b0ba25.png";
-import coldPlungeImage from "figma:asset/d6b9c97bc35799a6251c348243d9eb5e3ac183ee.png";
+import infraredCabinImage from "../assets/2a50e78db63a25dfaf19c3357349ab93c7c88dc7.png";
+import traditionalSaunaImage from "../assets/c0a3f03a4d82af92ed6651b8cefcf16492ab7a4f.png";
+import steamRoomImage from "../assets/873c94e81cbd6df4048da44196f538004a917894.png";
+import coldPlungeImage from "../assets/4f0209d8a91b341e6ab1e10914178ac64e6308a5.png";
 
 const services = [
   {
@@ -15,7 +16,7 @@ const services = [
   {
     title: "Steam Room",
     description: "Indulge in our humid steam rooms, perfect for opening pores, improving skin health, and respiratory wellness.",
-    image: "https://images.unsplash.com/photo-1676452458169-318fd3b9a98f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGVhbSUyMHJvb218ZW58MXx8fHwxNzYyMzEzNzY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    image: steamRoomImage
   },
   {
     title: "Infrared Cabin",

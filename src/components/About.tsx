@@ -6,7 +6,7 @@ import saunaStonesImage from "figma:asset/981b9494c08304d7525dde0133575a64ed95ee
 
 export function About() {
   return (
-    <div className="bg-white pt-24">
+    <div id = "about" className="bg-white pt-24">
       {/* Header Section */}
       <div className="container mx-auto px-8 py-16 text-center">
         <h1 className="mb-4 text-[#2b2b2b] text-5xl font-bold">Our Story</h1>

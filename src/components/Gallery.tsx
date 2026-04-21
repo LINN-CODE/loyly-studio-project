@@ -1,96 +1,38 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { X, Instagram, Heart, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
 import Masonry from "react-responsive-masonry";
 
-const galleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1759300031446-88e81c8a26c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMGludGVyaW9yJTIwd29vZHxlbnwxfHx8fDE3NjIzMjYzMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Wooden sauna interior",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1759216853310-7d315a1fd07d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHdlbGxuZXNzJTIwc3BhfGVufDF8fHx8MTc2MjMyNjM0MHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Sauna wellness spa",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1723810385053-21cd42433fe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5uaXNoJTIwc2F1bmElMjB0cmFkaXRpb25hbHxlbnwxfHx8fDE3NjIyNDY1Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Traditional Finnish sauna",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1749561532375-c8c50f128d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMG1vZGVybiUyMGRlc2lnbnxlbnwxfHx8fDE3NjIzMjYzNDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Modern sauna design",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1741601272577-fc2c46f87d9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHN0b25lcyUyMHN0ZWFtfGVufDF8fHx8MTc2MjMyNjM0MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Sauna stones and steam",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1757937176646-d943553b5f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMG5hdHVyZSUyMG91dGRvb3J8ZW58MXx8fHwxNzYyMzI2MzQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Outdoor sauna in nature",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1596748176765-08b3a6c9969a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjByZWxheGF0aW9uJTIwdG93ZWxzfGVufDF8fHx8MTc2MjMyNjM0MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Spa towels and relaxation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1687180948580-c4892a9a82c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWxsbmVzcyUyMG1lZGl0YXRpb24lMjBwZWFjZWZ1bHxlbnwxfHx8fDE3NjIyNjc0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Wellness meditation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1743286159555-ea765c1bc5e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMGJ1Y2tldCUyMGxhZGxlfGVufDF8fHx8MTc2MjMyNjM0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Sauna bucket and ladle",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1678988226654-8a8540faa8e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMGJlbmNoJTIwd29vZCUyMGRldGFpbHxlbnwxfHx8fDE3NjIzMjYzNDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Wooden sauna bench details",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1734117928667-c7f943a27e80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aW50ZXIlMjBjb2xkJTIwcGx1bmdlfGVufDF8fHx8MTc2MjMyNjM0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Winter cold plunge",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1741601274064-b0b23cfb332d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMGV4cGVyaWVuY2UlMjBwZW9wbGV8ZW58MXx8fHwxNzYyMzI2MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Sauna experience",
-  },
-];
+import img5715 from "../assets/IMG_5715.jpg";
+import img5796 from "../assets/IMG_5796.jpg";
+import img5798 from "../assets/IMG_5798.jpg";
+import img5806 from "../assets/IMG_5806.jpg";
+import img5814 from "../assets/IMG_5814.jpg";
+import img5817 from "../assets/IMG_5817.jpg";
+import img5826 from "../assets/IMG_5826.jpg";
+import img5901 from "../assets/IMG_5901.jpg";
+import img5912 from "../assets/IMG_5912.jpg";
+import img5913 from "../assets/IMG_5913 2.jpg";
+import img5916 from "../assets/IMG_5916.jpg";
+import img5920 from "../assets/IMG_5920.jpg";
+import img5921 from "../assets/IMG_5921.jpg";
 
-const instagramPosts = [
-  {
-    image: "https://images.unsplash.com/photo-1759300031446-88e81c8a26c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMGludGVyaW9yJTIwd29vZHxlbnwxfHx8fDE3NjIzMjYzMzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    likes: 342,
-    comments: 28,
-    caption: "Experience the warmth of Finnish tradition",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1723810385053-21cd42433fe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5uaXNoJTIwc2F1bmElMjB0cmFkaXRpb25hbHxlbnwxfHx8fDE3NjIyNDY1Nzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    likes: 289,
-    comments: 15,
-    caption: "Traditional Finnish sauna at its finest",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1741601272577-fc2c46f87d9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHN0b25lcyUyMHN0ZWFtfGVufDF8fHx8MTc2MjMyNjM0MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    likes: 421,
-    comments: 32,
-    caption: "The spirit of löyly 💨",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1757937176646-d943553b5f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMG5hdHVyZSUyMG91dGRvb3J8ZW58MXx8fHwxNzYyMzI2MzQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    likes: 567,
-    comments: 41,
-    caption: "Nature meets wellness",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1596748176765-08b3a6c9969a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjByZWxheGF0aW9uJTIwdG93ZWxzfGVufDF8fHx8MTc2MjMyNjM0MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    likes: 198,
-    comments: 12,
-    caption: "Relax and unwind",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1734117928667-c7f943a27e80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aW50ZXIlMjBjb2xkJTIwcGx1bmdlfGVufDF8fHx8MTc2MjMyNjM0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    likes: 612,
-    comments: 58,
-    caption: "Complete the ritual with a cold plunge ❄️",
-  },
+
+const galleryImages = [
+  { src: img5715, alt: "löyly studio experience" },
+  { src: img5796, alt: "löyly studio experience" },
+  { src: img5798, alt: "löyly studio experience" },
+  { src: img5806, alt: "löyly studio experience" },
+  { src: img5814, alt: "löyly studio experience" },
+  { src: img5817, alt: "löyly studio experience" },
+  { src: img5826, alt: "löyly studio experience" },
+  { src: img5901, alt: "löyly studio experience" },
+  { src: img5912, alt: "löyly studio experience" },
+  { src: img5913, alt: "löyly studio experience" },
+  { src: img5916, alt: "löyly studio experience" },
+  { src: img5920, alt: "löyly studio experience" },
+  { src: img5921, alt: "löyly studio experience" },
+
 ];
 
 export function Gallery() {
@@ -196,7 +138,7 @@ export function Gallery() {
           >
             <X className="w-8 h-8" />
           </button>
-          
+
           {/* Previous Button */}
           <button
             className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors bg-black/30 hover:bg-black/50 rounded-full p-3"
@@ -230,6 +172,7 @@ export function Gallery() {
             transition={{ duration: 0.3 }}
             key={selectedImage}
           />
+
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
             {galleryImages.map((_, index) => (
               <button

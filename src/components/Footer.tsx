@@ -37,40 +37,40 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="mb-6 text-[#004d40]">Quick Links</h4>
             <ul className="space-y-3 text-[#2b2b2b]/70">
               <li>
-                <motion.a 
-                  href="#home" 
+                <motion.button
+                  onClick={() => { onNavigate?.("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                   className="hover:text-[#004d40] transition-colors inline-block"
                   whileHover={{ x: 5 }}
                 >
                   Home
-                </motion.a>
+                </motion.button>
               </li>
               <li>
-                <motion.a 
-                  href="#about" 
+                <motion.button
+                  onClick={() => { onNavigate?.("about"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                   className="hover:text-[#004d40] transition-colors inline-block"
                   whileHover={{ x: 5 }}
                 >
                   About
-                </motion.a>
+                </motion.button>
               </li>
               <li>
-                <motion.a 
-                  href="#blog" 
+                <motion.button
+                  onClick={() => { onNavigate?.("blog"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                   className="hover:text-[#004d40] transition-colors inline-block"
                   whileHover={{ x: 5 }}
                 >
                   Blog
-                </motion.a>
+                </motion.button>
               </li>
               <li>
-                <motion.a 
-                  href="#member" 
+                <motion.button
+                  onClick={() => { onNavigate?.("member"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                   className="hover:text-[#004d40] transition-colors inline-block"
                   whileHover={{ x: 5 }}
                 >
                   Member
-                </motion.a>
+                </motion.button>
               </li>
             </ul>
           </motion.div>
