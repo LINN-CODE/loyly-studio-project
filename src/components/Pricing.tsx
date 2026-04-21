@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { Check, Gift } from "lucide-react";
+import { Check, Gift, ArrowRight } from "lucide-react";
 
 export function Pricing() {
   const ref = useRef(null);
@@ -118,125 +118,22 @@ export function Pricing() {
           </motion.div>
         </motion.div>
 
-        {/* Session Packages */}
-        <motion.div 
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <h3 className="text-center mb-12 text-[#2b2b2b]">Session Packages</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {sessionPackages.map((pkg, index) => (
-              <motion.a
-                key={pkg.name}
-                href="https://loylystudio.rezerv.co/membership"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-gray-200 p-8 hover:border-[#004d40] transition-all duration-300 cursor-pointer block"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <h4 className="text-[#2b2b2b] text-xl">{pkg.name}</h4>
-                  {pkg.transferable && (
-                    <div className="flex items-center gap-1 text-[#004d40]" title="Can be used as Gift">
-                      <Gift className="w-5 h-5" />
-                    </div>
-                  )}
-                </div>
-                <div className="mb-6">
-                  <span className="text-5xl font-bold text-[#004d40]">{pkg.price}</span>
-                </div>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#2b2b2b]/70">{pkg.type}</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#2b2b2b]/70">{pkg.sessions}</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#2b2b2b]/70">Valid for {pkg.validity}</span>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-sm text-[#2b2b2b]/60 mb-1">{pkg.description}</p>
-                  <p className="text-sm text-[#2b2b2b]/60 mb-1">{pkg.hours}</p>
-                  <p className="text-sm text-[#2b2b2b]/60 italic">{pkg.note}</p>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Memberships */}
+        {/* View All Packages Button */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h3 className="text-center mb-12 text-[#2b2b2b]">Memberships (Monthly Recurring)</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {memberships.map((membership, index) => (
-              <motion.a
-                key={membership.name}
-                href="https://loylystudio.rezerv.co/membership"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-[#004d40] p-8 bg-[#004d40]/5 cursor-pointer block"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <h4 className="text-[#2b2b2b] mb-4">{membership.name}</h4>
-                <div className="mb-6">
-                  <span className="text-5xl font-bold text-[#004d40]">{membership.price}</span>
-                  <span className="text-[#2b2b2b]/70 ml-2">{membership.period}</span>
-                </div>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#2b2b2b]/70">{membership.type}</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#2b2b2b]/70">{membership.sessions} sessions</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#2b2b2b]/70">{membership.commitment} commitment</span>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-[#004d40]/20">
-                  {membership.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-2 mb-2">
-                      <Check className="w-5 h-5 text-[#004d40] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#2b2b2b]/70">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Footer Note */}
-        <motion.div
-          className="text-center mt-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <p className="text-[#2b2b2b]/60 text-sm italic flex items-center justify-center gap-2">
-            <Gift className="w-4 h-4" />
-            Packages marked with gift icon are transferable and can be used as gifts
-          </p>
+          <a
+            href="https://loylystudio.rezerv.co/membership"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#004d40] text-white hover:bg-[#003d33] transition-colors"
+          >
+            <span>View All Packages & Book</span>
+            <ArrowRight className="w-5 h-10" />
+          </a>
         </motion.div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 interface RealmBlogPostProps {
   onNavigate?: (page: string) => void;
 }
-
+  
 export function RealmBlogPost({ onNavigate }: RealmBlogPostProps) {
   return (
     <div className="min-h-screen bg-white pt-32 pb-24">
